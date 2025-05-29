@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-neutral-800 bg-neutral-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 md:px-6 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-block px-6 py-3 rounded-md transition-all duration-300 font-medium text-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-primary text-primary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 mb-6;
+  }
+  
+  .section-subheading {
+    @apply text-xl font-display font-medium text-primary mb-12 max-w-2xl mx-auto;
+  }
+  
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Custom classes for animations */
+.nav-item-hover {
+  position: relative;
+}
+
+.nav-item-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: theme('colors.primary.DEFAULT');
+  transition: width 0.3s ease;
+}
+
+.nav-item-hover:hover::after {
+  width: 100%;
+}
+
+.gallery-image {
+  transition: all 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
