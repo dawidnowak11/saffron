@@ -175,7 +175,7 @@ export const About: React.FC = () => {
               </p>
               <div>
                 <p className="text-xl font-semibold text-primary">The Coastal Times</p>
-                <p className="text-white/80">Restaurant Review, 2024</p>
+                <p className="text-white/80">Restaurant Review, 2025</p>
               </div>
             </div>
           </AnimatedElement>
